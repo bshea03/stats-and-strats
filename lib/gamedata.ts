@@ -1,0 +1,43 @@
+import { title } from "process";
+
+export const games = [
+  {
+    id: 0,
+    title: "Super Mario 64",
+    name: "super-mario-64",
+    icon: "https://www.speedrun.com/static/game/o1y9wo6q/cover.png?v=82fa0a4",
+    year: 1995,
+    developer: "Nintendo",
+    publisher: "Nintendo",
+    genre: "Platformer",
+    rating: 0,
+    players: 0,
+    default: true,
+  },
+  {
+    id: 1,
+    title: "Super Mario Land",
+    name: "super-mario-land",
+    icon: "https://www.speedrun.com/static/game/m1mxoj62/cover.jpg?v=07cbb70",
+    year: 1989,
+    developer: "Nintendo",
+    publisher: "Nintendo",
+    genre: "Platformer",
+    rating: 0,
+    players: 0,
+    default: false,
+  },
+  {
+    id: 2,
+    title: "Super Mario Bros.",
+    name: "super-mario-bros",
+    icon: "https://www.speedrun.com/static/game/pd0wq31e/cover.png?v=f20e093",
+    year: 1990,
+    developer: "Nintendo",
+    publisher: "Nintendo",
+    genre: "Platformer",
+    rating: 0,
+    players: 0,
+    default: false,
+  },
+];
