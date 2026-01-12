@@ -1,5 +1,5 @@
 export type Game = {
-  id: number;
+  srcId: string;
   title: string;
   name: string;
   icon: string;

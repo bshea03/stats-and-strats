@@ -1,21 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
-import { EllipsisVertical, Gamepad2, LogOut, Plus, User } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { EllipsisVertical } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { Avatar } from "../ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-} from "../ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { SidebarFooter, SidebarMenu, SidebarMenuButton } from "../ui/sidebar";
 import { Game } from "@/types/games";
 import MainFooterDropdown from "./subcomponents/footer-dropdown";

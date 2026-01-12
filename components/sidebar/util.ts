@@ -11,19 +11,19 @@ import {
 export const getItems = (gameName: string | undefined) => ({
   statsItems: [
     {
+      title: "Categories",
+      url: `/${gameName}/categories`,
+      icon: Gamepad2,
+    },
+    {
       title: "Personal Bests",
       url: `/${gameName}/personal-bests`,
       icon: Award,
     },
     {
-      title: "ILs",
-      url: `/${gameName}/individual-levels`,
-      icon: Gauge,
-    },
-    {
       title: "Past Runs",
       url: `/${gameName}/past-runs`,
-      icon: Gamepad2,
+      icon: Gauge,
     },
   ],
   toolsItems: [

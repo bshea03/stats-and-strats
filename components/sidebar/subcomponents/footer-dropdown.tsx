@@ -26,7 +26,7 @@ export default function MainFooterDropdown({
 }: MainFooterDropdownProps) {
   return (
     <DropdownMenuContent
-      className="rounded-lg w-60 max-height-96 overflow-y-auto"
+      className="rounded-lg w-56 max-height-96 overflow-y-auto"
       align="start"
       sideOffset={4}
     >

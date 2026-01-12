@@ -2,7 +2,7 @@ import { title } from "process";
 
 export const games = [
   {
-    id: 0,
+    srcId: "o1y9wo6q",
     title: "Super Mario 64",
     name: "super-mario-64",
     icon: "https://www.speedrun.com/static/game/o1y9wo6q/cover.png?v=82fa0a4",
@@ -15,7 +15,7 @@ export const games = [
     default: true,
   },
   {
-    id: 1,
+    srcId: "m1mxoj62",
     title: "Super Mario Land",
     name: "super-mario-land",
     icon: "https://www.speedrun.com/static/game/m1mxoj62/cover.jpg?v=07cbb70",
@@ -28,7 +28,7 @@ export const games = [
     default: false,
   },
   {
-    id: 2,
+    srcId: "om1m3625",
     title: "Super Mario Bros.",
     name: "super-mario-bros",
     icon: "https://www.speedrun.com/static/game/pd0wq31e/cover.png?v=f20e093",

@@ -40,7 +40,7 @@ export default function MainSidebar() {
         <SidebarMenu key="Home" className="ml-2 mr-2 mt-4 mb-2 w-auto">
           <SidebarMenuItem key="Home">
             <SidebarMenuButton asChild>
-              <Link href="/">
+              <Link href={`/${game?.name || "/"}`}>
                 <Home />
                 <span>Home</span>
               </Link>
