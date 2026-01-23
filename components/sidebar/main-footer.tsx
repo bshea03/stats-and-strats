@@ -29,6 +29,8 @@ export default function MainFooter({
     console.log("Add game");
   };
 
+  const username = "";
+
   return (
     <SidebarFooter>
       <SidebarMenu>
@@ -49,7 +51,9 @@ export default function MainFooter({
                 />
               </Avatar>
               <div className="flex flex-1 flex-col text-left text-sm">
-                <span className="truncate font-medium">siggyscorp</span>
+                <span className="truncate font-medium">
+                  {username || "sheabr97"}
+                </span>
                 <span className="text-muted-foreground truncate text-xs">
                   {currentGame?.title ? currentGame.title : "Select a game"}
                 </span>

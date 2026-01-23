@@ -10,6 +10,11 @@ export function proxy(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  if (hostname.startsWith("api.")) {
+    url.pathname = `/api${url.pathname}`;
+    return NextResponse.rewrite(url);
+  }
+
   // statsandstrats.com -> kl/
   return NextResponse.next();
 }

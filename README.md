@@ -34,3 +34,13 @@ pnpm dev
 ```
 
 The splash page will be available at [http://localhost:3000](http://localhost:3000) and the app will be available at [http://app.localhost:3000](http://app.localhost:3000).
+
+## Database
+
+Run SQLite migration:
+
+`npx prisma migrate [db_name] --name [migration_name]`
+
+View database in Prisma Studio:
+
+`npx prisma studio`
