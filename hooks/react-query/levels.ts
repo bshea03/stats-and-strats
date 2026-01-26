@@ -15,15 +15,17 @@ type Level = {
   }>;
 };
 
+export const levelsQuery = (srcGameId: string) => ({
+  queryKey: ["levels", srcGameId],
+  queryFn: () => fetchLevels(srcGameId),
+  enabled: !!srcGameId, // Only fetch if we have a valid SRC ID
+});
+
 async function fetchLevels(srcGameId: string): Promise<Level[]> {
   const response = await srcClient.get(`games/${srcGameId}/levels`);
   return response.data;
 }
 
 export const useLevels = (srcGameId: string) => {
-  return useQuery({
-    queryKey: ["levels", srcGameId],
-    queryFn: () => fetchLevels(srcGameId),
-    enabled: !!srcGameId, // Only fetch if we have a valid SRC ID
-  });
+  return useQuery(levelsQuery(srcGameId));
 };

@@ -15,19 +15,11 @@ import {
 } from "@/components/ui/card";
 import { Spinner } from "@/components/ui/spinner";
 import { useCategories } from "@/hooks/react-query/categories";
-import { useGame } from "@/hooks/react-query/games";
 import { Separator } from "@/components/ui/separator";
+import { useActiveGame } from "@/app/contexts/GameContextProvider";
 
 export default function Home() {
-  const params = useParams();
-  const gameName = params.game as string;
-
-  // First, fetch the game data from your backend (includes SRC ID)
-  const {
-    data: game,
-    isLoading: gameLoading,
-    error: gameError,
-  } = useGame(gameName);
+  const game = useActiveGame();
 
   // Then, use the SRC ID to fetch categories from SRC API
   const {
@@ -36,8 +28,8 @@ export default function Home() {
     error: categoriesError,
   } = useCategories(game?.srcId ?? "");
 
-  const isLoading = gameLoading || categoriesLoading;
-  const error = gameError || categoriesError;
+  const isLoading = categoriesLoading;
+  const error = categoriesError;
 
   console.log(categories);
 
@@ -45,11 +37,11 @@ export default function Home() {
     <PageLayout title="Home">
       {/* Hero Section */}
       {game && (
-        <div className="relative w-full bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 border-b">
+        <div className="relative w-full bg-linear-to-br from-primary/5 via-accent/5 to-secondary/5 border-b">
           <div className="px-6 py-12 max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Game Icon */}
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <Image
                   src={game.icon}
                   alt={game.title}
@@ -79,8 +71,12 @@ export default function Home() {
                 {/* Category count */}
                 <div className="flex gap-4 justify-center md:justify-start pt-2">
                   <div className="text-center md:text-left">
-                    <div className="text-2xl font-bold">{categories?.length || 0}</div>
-                    <div className="text-xs text-muted-foreground">Categories</div>
+                    <div className="text-2xl font-bold">
+                      {categories?.length || 0}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Categories
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,7 +97,9 @@ export default function Home() {
       {error && (
         <div className="mx-6 my-8">
           <div className="max-w-2xl mx-auto bg-destructive/10 border border-destructive/20 rounded-lg p-6 text-center">
-            <div className="text-destructive font-semibold mb-2">Error Loading Data</div>
+            <div className="text-destructive font-semibold mb-2">
+              Error Loading Data
+            </div>
             <div className="text-sm text-muted-foreground">
               Unable to load categories. Please try again later.
             </div>

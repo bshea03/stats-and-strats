@@ -1,12 +1,7 @@
 "use client";
 
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import MainSidebar from "@/components/sidebar/main-sidebar";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Providers from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,28 +18,12 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const queryClient = new QueryClient();
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider
-            attribute="data-theme"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <ThemeToggle containerStyles="absolute top-4 right-4" />
-            <SidebarProvider>
-              <MainSidebar />
-              <SidebarInset>
-                <main className="rounded-lg ">{children}</main>
-              </SidebarInset>
-            </SidebarProvider>
-          </ThemeProvider>
-        </QueryClientProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
