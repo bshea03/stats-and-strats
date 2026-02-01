@@ -37,10 +37,8 @@ The splash page will be available at [http://localhost:3000](http://localhost:30
 
 ## Database
 
-Run SQLite migration:
+This project uses MongoDB. Set your connection string in `.env`:
 
-`npx prisma migrate [db_name] --name [migration_name]`
-
-View database in Prisma Studio:
-
-`npx prisma studio`
+```
+MONGODB_URI=mongodb+srv://...
+```

@@ -4,7 +4,7 @@ import { Client } from "srcjs";
 // Reuse the same client instance
 const srcClient = new Client();
 
-type Level = {
+export type Level = {
   id: string;
   name: string;
   weblink: string;

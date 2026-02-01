@@ -4,17 +4,17 @@ import { categoriesQuery } from "@/hooks/react-query/categories";
 import { fetchGame } from "@/hooks/react-query/games";
 
 type CategoriesPageProps = {
-  params: { game: string };
+  params: Promise<{ game: string }>;
 };
 
 export default async function CategoriesPage({ params }: CategoriesPageProps) {
   const queryClient = new QueryClient();
-  params = await params;
+  const { game: gameName } = await params;
 
-  const game = await fetchGame(params.game);
+  const game = fetchGame(gameName);
 
   if (game) {
-    await queryClient.prefetchQuery(categoriesQuery(game?.srcId));
+    await queryClient.prefetchQuery(categoriesQuery(game.srcId));
     return <CategoriesClient state={dehydrate(queryClient)} />;
   }
 

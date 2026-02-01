@@ -6,10 +6,10 @@ export default async function GameLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { game: string };
+  params: Promise<{ game: string }>;
 }) {
-  params = await params;
-  const game = await fetchGame(params.game);
+  const { game } = await params;
+  const gameData = fetchGame(game);
 
-  return <GameContextProvider game={game}>{children}</GameContextProvider>;
+  return <GameContextProvider game={gameData}>{children}</GameContextProvider>;
 }

@@ -1,6 +1,6 @@
 # Project Overview
 
-Next.js app using TypeScript, TailwindCSS, and Prisma with a SQLite database.
+Next.js app using TypeScript, TailwindCSS, and MongoDB.
 
 # Bash commands
 
