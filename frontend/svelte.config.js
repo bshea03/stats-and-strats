@@ -17,12 +17,6 @@ const config = {
 		},
 		prerender: {
 			handleUnseenRoutes: 'ignore'
-		},
-		typescript: {
-			config: (config) => ({
-				...config,
-				include: [...config.include, '../drizzle.config.ts']
-			})
 		}
 	},
 	preprocess: [mdsvex({ extensions: ['.svx', '.md'] })],
