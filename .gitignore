@@ -1,0 +1,42 @@
+build/bin
+node_modules
+frontend/build
+frontend/node_modules
+frontend/wailsjs/
+frontend/package.json.md5
+dist/
+
+# Go binaries
+stats-and-strats
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "stats-and-strats",
+  "outputfilename": "stats-and-strats",
+  "wailsjsdir": "./frontend/src/lib",
+  "frontend:install": "pnpm install",
+  "frontend:build": "pnpm run build",
+  "frontend:dev:watcher": "pnpm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "bshea03",
+    "email": "brady.shea97@gmail.com"
+  }
+}
